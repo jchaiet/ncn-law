@@ -1,6 +1,6 @@
 @use './abstracts/' as *;
 
-.linkCarousel {
+.carousel {
   //max-width: $layoutWidth;
   margin: 0 auto;
   padding: 3rem 0;
@@ -12,7 +12,7 @@
     margin-bottom: 2rem;
   }
 
-  .carousel {
+  .track {
     display: flex;
     gap: 2rem;
     padding: 1rem 2rem;

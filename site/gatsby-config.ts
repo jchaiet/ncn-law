@@ -12,14 +12,17 @@ const config: GatsbyConfig = {
   plugins: [{
     resolve: 'gatsby-source-sanity',
     options: {
-      "projectId": "uonyrg87",
-      "dataset": "production",
-      "graphqlTag": "graphql"
+      token: process.env.SANITY_TOKEN,
+      projectId: "uonyrg87",
+      dataset: "production",
+      graphqlTag: "graphql",
+      watchMode: true,
+      overlayDrafts: true
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/images/gatsby-icon.png"
+      icon: "src/images/gatsby-icon.png"
     }
   }, 
   {

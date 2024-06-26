@@ -28,6 +28,12 @@ type Slug = {
   current: string;
 }
 
+type Internal = {
+  metadata: {
+    path: Slug
+  }
+}
+
 type Props = {
   children: string | JSX.Element | JSX.Element[] | (() => JSX.Element)
 }
@@ -75,9 +81,16 @@ type CardItem = {
   heading: string,
   _rawDescription: string,
   ctaText: string,
-  ctaDestination: string,
+  internal: Internal,
   ctaStyle: string,
   ctaIcon: string
+}
+
+type LinkItem = {
+  _key: string,
+  heading: string,
+  _rawDescription: string,
+  internal: Internal,
 }
 
 type BioItem = {
@@ -91,5 +104,5 @@ type BioItem = {
   barAdmissions: string,
   affiliations: string,
   image: Image,
-  ctaDestination: string,
+  internal?: Internal,
 }

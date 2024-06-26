@@ -8,7 +8,6 @@ import Button from './button';
 import * as styles from '../styles/bioGrid.module.scss';
 
 const BioItem = ({ item, isInView, i }: { item: BioItem, isInView: boolean, i: number }) => {
-
   return (
     <div
       key={item._key}
@@ -33,7 +32,7 @@ const BioItem = ({ item, isInView, i }: { item: BioItem, isInView: boolean, i: n
       <div className={styles.cta}>
         <Button
           text={"View profile"}
-          destination={item.ctaDestination}
+          destination={item.internal?.metadata?.path?.current || '/'}
           style={"transparent"}
           icon={"arrow"}
         />

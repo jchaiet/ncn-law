@@ -7,6 +7,7 @@ import Button from './button';
 import * as styles from '../styles/cardGrid.module.scss';
 
 const CardItem = ({ item, isInView, i }: {item: CardItem, isInView: boolean, i: number}) => {
+  console.log(item)
 
   return (
     <div
@@ -20,11 +21,11 @@ const CardItem = ({ item, isInView, i }: {item: CardItem, isInView: boolean, i: 
         {item._rawDescription && <PortableText blocks={item._rawDescription} />}
       </div>
 
-      {item.ctaDestination &&
+      {item?.internal?.metadata?.path?.current &&
         <div className={styles.cta}>
           <Button
             text={item.ctaText}
-            destination={item.ctaDestination}
+            destination={item.internal?.metadata?.path?.current}
             style={item.ctaStyle}
             icon={item.ctaIcon}
           />

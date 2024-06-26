@@ -6,6 +6,8 @@ import TwoColumnBlock from '../components/two-column-block';
 import ImageGrid from '../components/image-grid';
 import CardGrid from '../components/card-grid';
 import BioGrid from '../components/bio-grid';
+import Carousel from '../components/carousel';
+import Bio from '../components/bio';
 import Banner from '../components/banner';
 
 export default function PageBuilder(props: any) {
@@ -23,6 +25,8 @@ export default function PageBuilder(props: any) {
     imageGrid: ImageGrid,
     cardGrid: CardGrid,
     bioGrid: BioGrid,
+    bio: Bio,
+    carousel: Carousel,
     banner: Banner
   }
 

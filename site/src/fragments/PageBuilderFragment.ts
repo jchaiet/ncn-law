@@ -19,13 +19,9 @@ export const data = graphql`
       ... on SanityContentBlock {
         _key
         _type
+        theme
+        orientation
         heading
-        image {
-          asset {
-            gatsbyImageData
-            url
-          }
-        }
       }
       ... on SanityTwoColumnBlock {
         _key
@@ -60,7 +56,13 @@ export const data = graphql`
           heading
           _rawDescription
           ctaText
-          ctaDestination
+          internal {
+            metadata {
+              path {
+                current
+              }
+            }
+          }
           ctaIcon
           ctaStyle
         }
@@ -79,7 +81,61 @@ export const data = graphql`
           }
           name
           _rawDetails
-          ctaDestination
+          internal {
+            metadata {
+              path {
+                current
+              }
+            }
+          }
+        }
+      }
+      ... on SanityCarousel {
+        _key
+        _type
+        variation
+        heading
+        links {
+          _key
+          heading
+          internal {
+            metadata {
+              path {
+                current
+              }
+            }
+          }
+        }
+        cards {
+          _key
+          heading
+          internal {
+            metadata {
+              path {
+                current
+              }
+            }
+          }
+        }
+      }
+      ... on SanityBio {
+        _key
+        _type
+        image {
+          asset {
+            gatsbyImageData
+            url
+          }
+        }
+        name
+        position
+        _rawDetails
+        internal {
+          metadata {
+            path {
+              current
+            }
+          }
         }
       }
       ... on SanityBanner {
