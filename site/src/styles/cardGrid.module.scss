@@ -1,0 +1,96 @@
+@use './abstracts/' as *;
+
+.cardGrid {
+  max-width: $layoutWidth;
+  margin: 0 auto;
+  padding: 3rem 0;
+
+  .heading {
+    @extend %heading-large;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .flex {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+
+    .item {
+      flex: 0.5 325px;
+      min-width: 325px;
+      height: auto;
+
+      @include medium {
+        flex: 0.5 500px;
+        min-width: unset;
+      }
+    }
+
+    @include medium {
+      flex-wrap: wrap;
+      gap: 3rem;
+      overflow: hidden;
+      padding: 1rem;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    min-height: 150px;
+    padding: 1rem;
+
+    @include large {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include wide {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .item {
+    opacity: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 100%;
+    background-color: $color-grey-light;
+    border-radius: 10px;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &.show {
+      animation: slideUpFade 0.5s forwards;
+    }
+
+    .heading {
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+
+    .cta {
+      margin-top: 1rem;
+    }
+  }
+}

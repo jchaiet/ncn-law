@@ -1,0 +1,93 @@
+@use './abstracts/' as *;
+
+.linkCarousel {
+  //max-width: $layoutWidth;
+  margin: 0 auto;
+  padding: 3rem 0;
+  overflow: hidden;
+
+  .heading {
+    @extend %heading-large;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .carousel {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    overflow: auto;
+
+    @include medium {
+      padding: 1rem 20%;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .item {
+    opacity: 0;
+    height: 100%;
+    background-color: $color-grey-light;
+    border-radius: 10px;
+    padding: 2rem;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    flex: 0 300px;
+    min-width: 300px;
+    min-height: 250px;
+    height: auto;
+
+    &:hover {
+      background-color: $color-blue;
+
+      .heading {
+        color: $color-white;
+      }
+    }
+
+    &.show {
+      animation: slideUpFade 0.5s forwards;
+    }
+
+    .icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: $color-white;
+      width: 30px;
+      height: 30px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        font-size: 1rem;
+      }
+    }
+
+    .heading {
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: left;
+      margin-bottom: 0;
+    }
+
+    .cta {
+      margin-top: 1rem;
+    }
+  }
+}

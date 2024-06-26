@@ -1,0 +1,33 @@
+@use './abstracts/' as *;
+
+.siteHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: $layoutWidth;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+  &.absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  .logo {
+    max-width: 100px;
+  }
+
+  nav {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      justify-content: space-between;
+      list-style: none;
+    }
+  }
+}

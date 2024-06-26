@@ -1,0 +1,44 @@
+@use './abstracts/' as *;
+
+.link {
+
+  background-color: $color-blue;
+  padding: 0.5rem 1.5rem;
+  color: $color-white;
+  border-radius: 10px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  svg {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover {
+    background-color: $color-blue-dark;
+    color: $color-white;
+    
+    svg {
+      transform: translateX(3px);
+    }
+  }
+
+  &.blue {
+    background-color: $color-blue;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-blue-dark;
+      color: $color-white;
+    }
+  }
+
+  &.transparent {
+    background-color: transparent;
+    color: $color-blue;
+    padding: 0;
+
+    &:hover {
+      color: $color-blue-dark;
+    }
+  }
+}

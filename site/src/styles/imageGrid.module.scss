@@ -1,0 +1,36 @@
+@use './abstracts/' as *;
+
+.imageGrid {
+  max-width: $layoutWidth;
+  margin: 0 auto;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: 150px;
+    padding: 1rem;
+
+    @include medium {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include wide {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .item {
+      min-height: 100px;
+      opacity: 0;
+
+      &.show {
+        animation: slideUpFade 0.5s forwards;
+      }
+    }
+
+    .itemImage {
+      margin: 0 auto;
+      max-width: 250px;
+    }
+  }
+}

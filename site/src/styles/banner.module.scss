@@ -1,0 +1,36 @@
+@use './abstracts/' as *;
+
+.banner {
+  background-color: $color-blue;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: $layoutWidth;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+  }
+
+  .heading {
+    @extend %heading-large;
+    color: $color-white;
+    margin: 0;
+    text-align: center;
+
+  }
+
+  p, a {
+    @extend %heading-2;
+    color: $color-white;
+
+    &:first-of-type {
+      margin: 0;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}

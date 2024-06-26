@@ -1,0 +1,50 @@
+@use './abstracts/' as *;
+
+.twoColumnBlock {
+  background-color: $color-grey-light;
+  position: relative;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    max-width: $layoutWidth;
+    margin: 0 auto;
+
+    @include large {
+      flex-direction: row;
+    }
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .content {
+      width: auto;
+      padding: 3rem;
+
+      @include large {
+        width: 50%;
+      }
+
+      h3 {
+        @extend %heading-large;
+      }
+    }
+
+    .image {
+      width: 100%;
+      min-height: 400px;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      right: 0;
+
+      @include large {
+        width: 50%;
+        position: absolute;
+      }
+    }
+  }
+}
