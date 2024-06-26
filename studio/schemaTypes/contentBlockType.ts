@@ -1,4 +1,4 @@
-import {DocumentTextIcon} from '@sanity/icons'
+import { DocumentTextIcon } from '@sanity/icons'
 import { defineField, defineType } from "sanity";
 
 export const contentBlockType = defineType({
@@ -16,17 +16,29 @@ export const contentBlockType = defineType({
       of: [{ type: "block" }]
     }),
     defineField({
-      name: 'image',
-      type: 'image',
-      options: { hotspot: true },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative text',
-          validation: Rule => Rule.required()
-        }
-      ],
+      title: 'Theme',
+      name: 'theme',
+      type: 'string',
+      initialValue: "blue",
+      options: {
+        list: [
+          { "title": "Blue", "value": "blue" },
+          { "title": "Grey", "value": "grey" },
+          { "title": "White", "value": "white" },
+        ],
+      }
+    }),
+    defineField({
+      title: 'Orientation',
+      name: 'orientation',
+      type: 'string',
+      initialValue: "standard",
+      options: {
+        list: [
+          { "title": "Standard", "value": "standard" },
+          { "title": "Heading Left", "value": "heading-left" },
+        ],
+      }
     }),
   ],
   icon: DocumentTextIcon,
@@ -35,7 +47,7 @@ export const contentBlockType = defineType({
       title: 'heading',
       image: 'image',
     },
-    prepare({title, image}) {
+    prepare({ title, image }) {
       return {
         title: title || 'Untitled',
         subtitle: 'Content Block',

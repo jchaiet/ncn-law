@@ -48,6 +48,14 @@ export const pageType = defineType({
           type: "bioGrid"
         }),
         defineArrayMember({
+          name: "carousel",
+          type: "carousel"
+        }),
+        defineArrayMember({
+          name: "bio",
+          type: "bio"
+        }),
+        defineArrayMember({
           name: "banner",
           type: "banner"
         }),

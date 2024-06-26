@@ -12,6 +12,11 @@ export const heroType = defineType({
       type: 'boolean',
     }),
     defineField({
+      name: 'isHome',
+      title: "Is this the home page?",
+      type: 'boolean',
+    }),
+    defineField({
       name: 'heading',
       type: 'string'
     }),

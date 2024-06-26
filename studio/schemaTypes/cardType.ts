@@ -19,12 +19,15 @@ export const cardType = defineType({
       ]
     }),
     defineField({
+      title: 'CTA Text',
       name: 'ctaText',
       type: 'string'
     }),
     defineField({
-      name: 'ctaDestination',
-      type: 'string'
+      title: "Destination",
+      name: "internal",
+      type: "reference",
+      to: [{ type: "page" }],
     }),
     defineField({
       title: 'CTA Style',

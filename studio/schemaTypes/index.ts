@@ -6,10 +6,12 @@ import { twoColumnBlockType } from "./twoColumnBlockType"
 import { imageGridType } from "./imageGridType"
 import { cardGridType } from "./cardGridType"
 import { bioGridType } from "./bioGridType"
+import { carouselType } from "./carouselType"
 import { bannerType } from "./bannerType"
 import { breakType } from "./breakType"
 import { cardType } from "./cardType"
 import { bioType } from "./bioType"
+import { linkType } from "./linkType"
 
 export const schemaTypes = [
   pageType,
@@ -20,8 +22,10 @@ export const schemaTypes = [
   imageGridType,
   cardGridType,
   bioGridType,
+  carouselType,
   bannerType,
   breakType,
   cardType,
-  bioType
+  bioType,
+  linkType
 ]

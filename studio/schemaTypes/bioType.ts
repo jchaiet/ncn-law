@@ -1,5 +1,5 @@
 import { defineField, defineType } from "sanity";
-import { DocumentTextIcon } from '@sanity/icons'
+import { UserIcon } from '@sanity/icons'
 
 export const bioType = defineType({
   name: 'bio',
@@ -35,8 +35,10 @@ export const bioType = defineType({
       ]
     }),
     defineField({
-      name: 'ctaDestination',
-      type: 'string'
+      title: "Destination",
+      name: "internal",
+      type: "reference",
+      to: [{ type: "page" }],
     }),
   ],
   preview: {
@@ -47,6 +49,7 @@ export const bioType = defineType({
       return {
         title: title || 'Untitled',
         subtitle: 'Bio',
+        media: UserIcon,
       }
     },
   },
