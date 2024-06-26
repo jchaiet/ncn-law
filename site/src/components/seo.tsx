@@ -26,8 +26,6 @@ function Seo(props: Metadata) {
     }
   `)
 
-  console.log('meta', site.siteMetadata);
-
   return (
     <>
       <title>{title}</title>

@@ -9,6 +9,7 @@ export const data = graphql`
         _type
         heading
         includeLogo
+        isHome
         image {
           asset {
             gatsbyImageData

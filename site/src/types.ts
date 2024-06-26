@@ -47,6 +47,8 @@ type SanityHero = {
   _key: string,
   type: string,
   title: string,
+  includeLogo: boolean,
+  isHome: boolean
 }
 
 type SanityContentBlock = {

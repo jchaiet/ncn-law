@@ -11,6 +11,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  &.home {
+    min-height: 650px;
+    height: 80dvh;
+  }
+
   .logo {
     max-width: 200px;
   }

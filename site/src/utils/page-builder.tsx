@@ -30,8 +30,6 @@ export default function PageBuilder(props: any) {
     banner: Banner
   }
 
-  console.log(pageBuilder)
-
   return pageBuilder.map((block: any, index: number) =>  {
     if(components[block._type]){
       return React.createElement(components[block._type], {

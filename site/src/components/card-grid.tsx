@@ -7,8 +7,6 @@ import Button from './button';
 import * as styles from '../styles/cardGrid.module.scss';
 
 const CardItem = ({ item, isInView, i }: {item: CardItem, isInView: boolean, i: number}) => {
-  console.log(item)
-
   return (
     <div
       className={`${styles.item} ${isInView ? styles.show : styles.hide}`}

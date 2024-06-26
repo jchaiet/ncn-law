@@ -5,11 +5,11 @@ import PortableText from "../utils/portable-text";
 import * as styles from '../styles/hero.module.scss';
 
 export default function Hero({ block, raw }: { block: any, raw: any, index: Number }) {
-  const { image, heading, includeLogo } = block;
+  const { image, heading, includeLogo, isHome } = block;
 
   return (
     <section
-      className={styles.hero}
+      className={`${styles.hero} ${isHome ? styles.home : ''}`}
       style={{
         backgroundImage: `url(${image?.asset.url})`
       }}

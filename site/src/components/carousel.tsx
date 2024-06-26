@@ -10,7 +10,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const LinkItem = ({ item, isInView, i }: { item: LinkItem, isInView: boolean, i: number }) => {
-  console.log(item)
 
   return (
     <>
