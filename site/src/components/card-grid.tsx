@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useIsVisible } from '../hooks/useIsVisible';
-import PortableText from "../utils/portable-text";
+import PortableTextBlock from "../utils/portable-text";
 
 import Button from './button';
 
@@ -16,7 +16,7 @@ const CardItem = ({ item, isInView, i }: {item: CardItem, isInView: boolean, i: 
     >
       <div className={styles.content}>
         <div className={styles.heading}>{item.heading}</div>
-        {item._rawDescription && <PortableText blocks={item._rawDescription} />}
+        {item._rawDescription && <PortableTextBlock blocks={item._rawDescription} />}
       </div>
 
       {item?.internal?.metadata?.path?.current &&
@@ -51,7 +51,7 @@ export default function CardGrid({ block, raw }: { block: any, raw: any, index: 
   return (
     <div className={styles.cardGrid}>
       {heading && <div className={styles.heading}>{heading}</div>}
-      {raw.description && <PortableText blocks={raw.description} />}
+      {raw.description && <PortableTextBlock blocks={raw.description} />}
 
       {items &&
         <div

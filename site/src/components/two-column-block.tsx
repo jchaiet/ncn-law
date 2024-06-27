@@ -1,5 +1,5 @@
 import React from 'react';
-import PortableText from "../utils/portable-text";
+import PortableTextBlock from "../utils/portable-text";
 
 import * as styles from '../styles/twoColumnBlock.module.scss';
 
@@ -11,7 +11,7 @@ export default function TwoColumnBlock({ block, raw, index }: { block: any, raw:
       <div className={`${styles.container} ${textPosition.toLowerCase() === "start" ? "" : styles.reverse}`}>
         <div className={styles.content}>
           <h3>{heading}</h3>
-          <PortableText blocks={raw.description} />
+          <PortableTextBlock blocks={raw.description} />
         </div>
 
         <div

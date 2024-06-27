@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import PortableText from "../utils/portable-text";
+import PortableTextBlock from "../utils/portable-text";
 import { useIsVisible } from '../hooks/useIsVisible'
 
 import Button from './button';
@@ -58,7 +58,7 @@ export default function BioGrid({ block, raw, index }: { block: any, raw: any, i
   return (
     <div className={styles.bioGrid}>
       {heading && <div className={styles.heading}>{heading}</div>}
-      {raw.description && <PortableText blocks={raw.description} />}
+      {raw.description && <PortableTextBlock blocks={raw.description} />}
 
       <div
         className={styles.flex}

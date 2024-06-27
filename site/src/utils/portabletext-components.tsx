@@ -1,9 +1,10 @@
-import React
- from "react";
-const serializers = {
+import React from "react";
+
+const portableTextComponents = {
   types: {
     break: (props: any) => {
-      const { style } = props.node;
+
+      const { style } = props.value;
       if (style === "hr") {
         return <hr className="hr" />;
       }
@@ -12,4 +13,4 @@ const serializers = {
   }
 }
 
-export default serializers
+export default portableTextComponents

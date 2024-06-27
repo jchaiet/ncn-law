@@ -1,6 +1,6 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import PortableText from "../utils/portable-text";
+import PortableTextBlock from "../utils/portable-text";
 
 import * as styles from '../styles/hero.module.scss';
 
@@ -24,7 +24,7 @@ export default function Hero({ block, raw }: { block: any, raw: any, index: Numb
             />
           }
           {heading && <h1>{heading}</h1>}
-          <PortableText blocks={raw.description} />
+          <PortableTextBlock blocks={raw.description} />
         </div>
       </div>
     </section>

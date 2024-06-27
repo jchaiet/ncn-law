@@ -1,6 +1,6 @@
 import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image';
-import PortableText from "../utils/portable-text";
+import PortableTextBlock from "../utils/portable-text";
 
 import * as styles from '../styles/contentBlock.module.scss';
 
@@ -13,7 +13,7 @@ export default function ContentBlock({ block, raw, index }: { block: any, raw: a
         {heading && <div className={styles.heading}>{heading}</div>}
 
         <div className={styles.content}>
-          <PortableText blocks={raw.description} />
+          <PortableTextBlock blocks={raw.description} />
         </div>
       </div>
     </div>

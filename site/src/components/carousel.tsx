@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'gatsby';
-import PortableText from "../utils/portable-text";
+import PortableTextBlock from "../utils/portable-text";
 import { useIsVisible } from '../hooks/useIsVisible';
 
 import * as styles from '../styles/carousel.module.scss';
@@ -71,7 +71,7 @@ export default function Carousel({ block, raw }: { block: any, raw: any, index: 
   return (
     <div className={styles.carousel}>
       {heading && <div className={styles.heading}>{heading}</div>}
-      {raw.description && <PortableText blocks={raw.description} />}
+      {raw.description && <PortableTextBlock blocks={raw.description} />}
 
       {items &&
         <div

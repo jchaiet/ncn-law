@@ -1,5 +1,5 @@
 import React from 'react';
-import PortableText from "../utils/portable-text";
+import PortableTextBlock from "../utils/portable-text";
 
 import * as styles from '../styles/banner.module.scss';
 
@@ -10,7 +10,7 @@ export default function Banner({ block, raw }: { block: any, raw: any, index: Nu
     <div className={`${styles.banner} ${styles[theme]}`}>
       <div className={styles.container}>
         {heading && <div className={styles.heading}>{heading}</div>}
-        {raw.description && <PortableText blocks={raw.description} />}
+        {raw.description && <PortableTextBlock blocks={raw.description} />}
       </div>
     </div>
   )
