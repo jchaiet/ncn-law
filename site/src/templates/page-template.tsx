@@ -8,7 +8,6 @@ import Seo from "../components/seo";
 
 const PageTemplate = ({ location, data }: {location: LocationI, data: PageI }) => {
 
-  console.log("q", data)
   return (
     <Layout location={location}>
       <PageBuilder pageBuilder={data?.sanityPage?.pageBuilder} _rawPageBuilder={data?.sanityPage?._rawPageBuilder} />
