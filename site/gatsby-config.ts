@@ -12,7 +12,7 @@ const config: GatsbyConfig = {
   plugins: [{
     resolve: 'gatsby-source-sanity',
     options: {
-      token: process.env.SANITY_TOKEN,
+      token: process.env.SANITY_API_READ_TOKEN,
       projectId: "uonyrg87",
       dataset: "production",
       graphqlTag: "graphql",

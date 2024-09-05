@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -19,37 +19,56 @@ const pages = [
     id: 2,
     text: "Resources",
     destination: "/resources"
-  },
-  {
-    id: 3,
-    text: "Contact",
-    destination: "/contact"
   }
 ]
+export default function Header({ location }: { location: any }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-const Header = ({ location }: { location: any }) => (
-  <header className={`${styles.siteHeader} ${location.pathname === "/" ? styles.absolute : ""}`}>
-    <div>
-      <Link
-        to={"/"}
-      >
-        <StaticImage
-          className={styles.logo}
-          src="../images/ncn-logo.jpg"
-          alt="Naness, Chaiet & Naness"
-        />
-      </Link>
-    </div>
-    <nav>
-      <ul>
-        {pages.map(page => (
-          <li key={page.id}>
-            <Link to={page.destination}>{page.text}</Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  </header>
-)
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMenuOpen(false);
+    };
 
-export default Header
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <header className={`${styles.siteHeader} ${location.pathname === "/" ? styles.absolute : ""}`}>
+      <div>
+        <Link
+          to={"/"}
+        >
+          <StaticImage
+            className={styles.logo}
+            src="../images/ncn-logo.jpg"
+            alt="Naness, Chaiet & Naness"
+          />
+        </Link>
+      </div>
+
+      <div className={`${styles.mobileToggle}`}>
+        <button onClick={() => setIsMenuOpen(prevState => !prevState)} aria-label="Toggle mobile menu" id="b1" className={`${styles.toggle} ${isMenuOpen ? styles.open : styles.closed}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav className={`${styles.mainNav} ${isMenuOpen ? styles.open : styles.closed}`}>
+        <ul>
+          {pages.map(page => (
+            <li key={page.id}>
+              <Link to={page.destination}>{page.text}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div className={`${styles.overlay} ${isMenuOpen ? styles.open : styles.closed}`} />
+    </header>
+  )
+}

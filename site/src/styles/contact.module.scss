@@ -1,0 +1,43 @@
+@use './abstracts/' as *;
+
+.contact {
+  .container {
+    display: flex;
+    max-width: $layoutWidth;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    gap: 3rem;
+  }
+
+  .heading {
+    @extend %heading-large;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1;
+
+    form {
+      max-width: 500px;
+    }
+  }
+
+  .info {
+    flex: 1;
+  }
+
+  .inputRow {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

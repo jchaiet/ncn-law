@@ -8,6 +8,7 @@ import { cardGridType } from "./cardGridType"
 import { bioGridType } from "./bioGridType"
 import { carouselType } from "./carouselType"
 import { bannerType } from "./bannerType"
+import { contactType } from "./contactType"
 import { breakType } from "./breakType"
 import { cardType } from "./cardType"
 import { bioType } from "./bioType"
@@ -24,6 +25,7 @@ export const schemaTypes = [
   bioGridType,
   carouselType,
   bannerType,
+  contactType,
   breakType,
   cardType,
   bioType,

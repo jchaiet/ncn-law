@@ -9,6 +9,7 @@ import BioGrid from '../components/bio-grid';
 import Carousel from '../components/carousel';
 import Bio from '../components/bio';
 import Banner from '../components/banner';
+import Contact from '../components/contact';
 
 export default function PageBuilder(props: any) {
   
@@ -27,7 +28,8 @@ export default function PageBuilder(props: any) {
     bioGrid: BioGrid,
     bio: Bio,
     carousel: Carousel,
-    banner: Banner
+    banner: Banner,
+    contact: Contact
   }
 
   return pageBuilder.map((block: any, index: number) =>  {

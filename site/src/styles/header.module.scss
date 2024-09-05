@@ -9,6 +9,28 @@
   margin: 0 auto;
   padding: 2rem 1rem;
 
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    transition: z-index 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
+    &.open {
+      background-color: rgba($color: $color-black, $alpha: 0.75);
+      z-index: 90;
+    }
+
+    &.closed {
+      background-color: transparent;
+      z-index: -1;
+    }
+
+    @include medium {
+      display: none;
+    }
+  }
+
   &.absolute {
     position: absolute;
     top: 0;
@@ -21,13 +43,158 @@
     max-width: 100px;
   }
 
-  nav {
-    ul {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      justify-content: space-between;
-      list-style: none;
+  .mobileToggle {
+    display: flex;
+    margin-right: 2rem;
+    
+    @include medium {
+      display: none;
+    }
+  }
+
+  .toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 29px;
+    position: relative;
+    z-index: 105;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border: none;
+
+    &.open {
+      span {
+        &:nth-child(1) {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          width: 0%;
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    span {
+      display: block;
+      position: relative;
+      height: 4px;
+      width: 100%;
+      background: $color-blue;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out;
+
+      &:nth-child(1) {
+        //top: 0px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+      }
+
+      &:nth-child(2) {
+        //top: 10px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+      }
+
+      &:nth-child(3) {
+        //top: 20px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+      }
+    }
+  }
+}
+
+.mainNav {
+  position: absolute;
+  background-color: $color-white;
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+  z-index: 100;
+  right: 0;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  &.closed {
+    transform: translateX(2000px);
+  }
+
+  @include medium {
+    width: unset;
+    position: relative;
+    background-color: transparent;
+
+    &.open,
+    &.closed {
+      transform: translateX(0);
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    list-style: none;
+    padding-top: 8rem;
+
+    @include medium {
+      flex-direction: row;
+      padding-top: 0;
+    }
+
+    li {
+      a {
+        transition: color 0.3s ease-in-out, 0.3s ease-in-out;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: $color-grey-light;
+        }
+      }
     }
   }
 }

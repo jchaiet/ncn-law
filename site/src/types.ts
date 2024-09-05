@@ -64,6 +64,13 @@ type SanityTwoColumnBlock = {
   textPosition: string
 }
 
+type SanityContact = {
+  _key: string,
+  type: string,
+  title: string,
+  receiver: string
+}
+
 type Image = {
   _key: string,
   alt: string,

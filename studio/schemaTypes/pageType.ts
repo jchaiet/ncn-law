@@ -59,6 +59,10 @@ export const pageType = defineType({
           name: "banner",
           type: "banner"
         }),
+        defineArrayMember({
+          name: "contact",
+          type: "contact"
+        }),
       ]
     })
   ]

@@ -28,6 +28,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   color: $color-black;
+  overflow-x: hidden;
 }
 
 :focus:not(:focus-visible) {
@@ -95,9 +96,14 @@ button,
 textarea,
 select {
   font: inherit;
+  border: 2px solid $color-grey-light;
+  border-radius: 5px;
+  transition: border 0.3s ease-in-out;
+  font-size: 1rem;
 
   &:focus {
     outline: none;
+    border: 2px solid $color-blue;
   }
 }
 

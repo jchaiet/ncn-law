@@ -145,6 +145,12 @@ export const data = graphql`
         theme
         heading
       }
+      ... on SanityContact {
+        _key
+        _type
+        heading
+        receiver
+      }  
     }
   }
 `;
