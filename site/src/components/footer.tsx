@@ -26,11 +26,6 @@ const pages = [
     id: 2,
     text: "Resources",
     destination: "/resources"
-  },
-  {
-    id: 3,
-    text: "Contact",
-    destination: "/contact"
   }
 ]
 

@@ -77,6 +77,11 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $color-blue-dark;
+      }
     }
   }
 
@@ -89,6 +94,16 @@
 
       @include medium {
         align-items: flex-start;
+      }
+
+      li {
+        a {
+          transition: color 0.3s ease-in-out;
+  
+          &:hover {
+            color: $color-blue-dark;
+          }
+        }
       }
     }
   }
