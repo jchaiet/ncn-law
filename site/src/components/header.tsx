@@ -30,7 +30,7 @@ export default function Header({ location }: { location: any }) {
     };
 
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -38,7 +38,7 @@ export default function Header({ location }: { location: any }) {
 
   return (
     <header className={`${styles.siteHeader} ${location.pathname === "/" ? styles.absolute : ""}`}>
-      <div>
+      <div className={styles.logoContainer}>
         <Link
           to={"/"}
         >
@@ -48,14 +48,14 @@ export default function Header({ location }: { location: any }) {
             alt="Naness, Chaiet & Naness"
           />
         </Link>
-      </div>
 
-      <div className={`${styles.mobileToggle}`}>
-        <button onClick={() => setIsMenuOpen(prevState => !prevState)} aria-label="Toggle mobile menu" id="b1" className={`${styles.toggle} ${isMenuOpen ? styles.open : styles.closed}`}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div className={`${styles.mobileToggle}`}>
+          <button onClick={() => setIsMenuOpen(prevState => !prevState)} aria-label="Toggle mobile menu" id="b1" className={`${styles.toggle} ${isMenuOpen ? styles.open : styles.closed}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
 
       <nav className={`${styles.mainNav} ${isMenuOpen ? styles.open : styles.closed}`}>
