@@ -48,13 +48,13 @@
     }
   }
 
-  // &.absolute {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   z-index: 2;
-  // }
+  &.absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
 
   .logo {
     max-width: 100px;
@@ -117,7 +117,7 @@
       display: block;
       position: relative;
       height: 4px;
-      width: 100%;
+      width: auto;
       background: $color-blue;
       border-radius: 9px;
       opacity: 1;
