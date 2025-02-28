@@ -62,6 +62,7 @@
 
   .mobileToggle {
     display: flex;
+    margin: 0;
     
     @include medium {
       display: none;
