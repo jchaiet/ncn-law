@@ -6,15 +6,16 @@
   justify-content: center;
   position: relative;
   min-height: 300px;
+  max-height: 350px;
 
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 
-  @include medium {
+  @include small {
     min-height: 500px;
-    background-size: cover;
+    max-height: 600px;
+
   }
 
   &.home {
