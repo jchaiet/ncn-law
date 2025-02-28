@@ -10,10 +10,11 @@
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 
   @include medium {
     min-height: 500px;
+    background-size: cover;
   }
 
   &.home {
