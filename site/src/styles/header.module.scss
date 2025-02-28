@@ -62,12 +62,6 @@
 
   .mobileToggle {
     display: flex;
-
-    button {
-      width: auto;
-      min-width: 40px;
-      flex: 1;
-    }
     
     @include medium {
       display: none;
@@ -122,6 +116,7 @@
       display: block;
       position: relative;
       height: 4px;
+      min-width: 40px;
       width: 100%;
       background: $color-blue;
       border-radius: 9px;
