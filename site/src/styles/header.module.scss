@@ -63,7 +63,7 @@
   .mobileToggle {
     display: flex;
     margin: 0;
-    
+
     @include medium {
       display: none;
     }
@@ -117,7 +117,7 @@
       display: block;
       position: relative;
       height: 4px;
-      min-width: 25px;
+      min-width: 30px;
       width: 100%;
       background: $color-blue;
       border-radius: 9px;
