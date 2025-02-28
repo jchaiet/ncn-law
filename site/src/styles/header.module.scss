@@ -49,7 +49,7 @@
   }
 
   &.absolute {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -121,7 +121,7 @@
       background: $color-blue;
       border-radius: 9px;
       opacity: 1;
-      left: 0;
+      //left: 0;
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
       -o-transform: rotate(0deg);

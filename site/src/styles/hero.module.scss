@@ -8,19 +8,18 @@
   min-height: 300px;
   max-height: 350px;
 
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
-  @include small {
-    min-height: 500px;
-    max-height: 600px;
-
-  }
-
   &.home {
-    min-height: 650px;
     height: 85dvh;
+
+    @include small {
+      min-height: 500px;
+      max-height: 650px;
+    }  
   }
 
   .logo {
