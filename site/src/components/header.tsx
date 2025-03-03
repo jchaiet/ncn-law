@@ -49,13 +49,11 @@ export default function Header({ location }: { location: any }) {
           />
         </Link>
 
-        <div className={`${styles.mobileToggle}`}>
-          <button onClick={() => setIsMenuOpen(prevState => !prevState)} aria-label="Toggle mobile menu" className={`${styles.toggle} ${isMenuOpen ? styles.open : styles.closed}`}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
+        <button onClick={() => setIsMenuOpen(prevState => !prevState)} aria-label="Toggle mobile menu" className={`${styles.toggle} ${isMenuOpen ? styles.open : styles.closed}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
 
       <nav className={`${styles.mainNav} ${isMenuOpen ? styles.open : styles.closed}`}>

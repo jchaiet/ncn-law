@@ -60,15 +60,6 @@
     max-width: 100px;
   }
 
-  .mobileToggle {
-    display: flex;
-    margin: 0;
-
-    @include medium {
-      display: none;
-    }
-  }
-
   .toggle {
     display: flex;
     flex-direction: column;
@@ -89,6 +80,10 @@
     outline: none;
     background-color: transparent;
     border: none;
+
+    @include medium {
+      display: none;
+    }
 
     &.open {
       span {
