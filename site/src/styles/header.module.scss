@@ -5,7 +5,6 @@
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
   max-width: $layoutWidth;
   margin: 0 auto;
   padding: 2rem 1rem;
@@ -157,7 +156,7 @@
 .mainNav {
   position: absolute;
   background-color: $color-white;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   max-width: 500px;
   z-index: 100;

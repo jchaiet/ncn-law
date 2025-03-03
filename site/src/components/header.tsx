@@ -36,6 +36,14 @@ export default function Header({ location }: { location: any }) {
     };
   }, []);
 
+  useEffect(() => {
+    if(isMenuOpen){
+      document.body.style.overflowY = "hidden";
+    }else{
+      document.body.style.overflowY = "auto";
+    }
+  }, [isMenuOpen])
+ 
   return (
     <header className={`${styles.siteHeader} ${location.pathname === "/" ? styles.absolute : ""}`}>
       <div className={styles.logoContainer}>
